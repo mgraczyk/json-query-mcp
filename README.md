@@ -1,4 +1,5 @@
 # JSON Query MCP
+[![smithery badge](https://smithery.ai/badge/@mgraczyk/json-query-mcp)](https://smithery.ai/server/@mgraczyk/json-query-mcp)
 
 A Model Context Protocol (MCP) server for querying large JSON files.
 This server provides tools for working with large JSON data that can be used by LLM models implementing the [Model Context Protocol](https://modelcontextprotocol.io).
