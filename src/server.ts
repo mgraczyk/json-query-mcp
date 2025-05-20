@@ -11,6 +11,8 @@ interface Options {
   version: string;
 }
 
+const PATH_ARG_DESCRIPTION = "Absolute path to the JSON file.";
+
 const getErrorResponse = (error: unknown): CallToolResult => {
   const errorMessage = error instanceof Error ? error.message : String(error);
   return {
@@ -34,7 +36,7 @@ export function createServerWithTools(options: Options): McpServer {
     'json_query_jsonpath',
     'Query a JSON file using JSONPath. Use to get values precisely from large JSON files.',
     {
-      file_path: z.string().describe('Path to the JSON file'),
+      file_path: z.string().describe(PATH_ARG_DESCRIPTION),
       jsonpath: z.string().min(1).describe('JSONPath expression to evaluate'),
     },
     async ({ file_path, jsonpath }) => {
@@ -62,7 +64,7 @@ export function createServerWithTools(options: Options): McpServer {
     'json_query_search_keys',
     'Search for keys in a JSON file. Use when you do not know the path to a key in a large JSON file, but have some idea what the key is.',
     {
-      file_path: z.string().describe('Path to the JSON file'),
+      file_path: z.string().describe(PATH_ARG_DESCRIPTION),
       query: z.string().min(1).describe('Search term for finding matching keys'),
       limit: z
         .number()
@@ -98,7 +100,7 @@ export function createServerWithTools(options: Options): McpServer {
     'json_query_search_values',
     'Search for values in a JSON file. Use when you do not know the path to a value in a large JSON file, but have some idea what the value is.',
     {
-      file_path: z.string().describe('Path to the JSON file'),
+      file_path: z.string().describe(PATH_ARG_DESCRIPTION),
       query: z.string().min(1).describe('Search term for finding matching values'),
       limit: z
         .number()
