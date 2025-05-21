@@ -3,6 +3,10 @@
 A Model Context Protocol (MCP) server for querying large JSON files.
 This server provides tools for working with large JSON data that can be used by LLM models implementing the [Model Context Protocol](https://modelcontextprotocol.io).
 
+<a href="https://glama.ai/mcp/servers/@mgraczyk/json-query-mcp">
+  <img width="380" height="200" src="https://glama.ai/mcp/servers/@mgraczyk/json-query-mcp/badge" alt="JSON Query MCP server" />
+</a>
+
 ## Features
 
 - Query JSON files using JSONPath expressions
